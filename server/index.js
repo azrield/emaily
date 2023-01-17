@@ -2,7 +2,15 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send({ hi: 'there' });
+  res.send({ bye: 'there' });
 });
 
-app.listen(5000);
+const PORT = process.env.PORT || 3000;
+/* const server = */app.listen(PORT);
+
+// app.get('/close', (req, res) => {
+//   res.send({ action: 'close' });
+//   server.close(() => {
+//     console.log('Http server closed.');
+//   });
+// });
