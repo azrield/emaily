@@ -1,16 +1,9 @@
 const express = require('express');
+require('./services/passport');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ bye: 'there' });
-});
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 3000;
-/* const server = */app.listen(PORT);
-
-// app.get('/close', (req, res) => {
-//   res.send({ action: 'close' });
-//   server.close(() => {
-//     console.log('Http server closed.');
-//   });
-// });
+app.listen(PORT);
